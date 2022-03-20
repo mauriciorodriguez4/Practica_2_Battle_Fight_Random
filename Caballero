@@ -1,0 +1,40 @@
+package practica2;
+
+import java.util.Random;
+
+/**
+ *
+ * @author MauriRod
+ */
+public class Caballero extends Personaje {
+
+    public Caballero() {
+        super("Caballero", 125, 20, 35, 0.6, "corte espada");
+    }
+
+    public void aumentoAtaque() {
+        Random r = new Random();
+        int a = r.nextInt(200);
+        if (a > 100 && a < 150 && this.getSalud() <= 50) {
+            int ataque = this.getAtaque();
+            ataque += 3;
+            super.setAtaque(ataque);
+            System.out.println("Pobre iluso...Creiste que me vencerias");
+            System.out.println("TUS ATAQUES SON DEBILES!");
+        }
+    }
+
+    public void bajarDefensa() {
+        Random r = new Random();
+        int a = r.nextInt(200);
+
+        if (a > 100 && this.getSalud() > 100) {
+            int defensa = this.getDefensa();
+            defensa -= 3;
+            this.setDefensa(defensa);
+            System.out.println("Desgraciados! Me habeis danado el escudo");
+            System.out.println("Pagaran carooooooooooooooooooooo!");
+        }
+    }
+
+}
