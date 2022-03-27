@@ -8,23 +8,30 @@ import java.util.Random;
  */
 public class Caballero extends Personaje {
 
-    public Caballero() {
-        super("Caballero", 125, 20, 35, 0.6, "corte espada");
+   public Caballero(){
+        
+        super("Caballero",150,30,20,0.8,"un corte con espada");
+        
     }
-
-    public void aumentoAtaque() {
+    
+    public void aumentoAtaque(){
+        
         Random r = new Random();
         int a = r.nextInt(200);
-        if (a > 100 && a < 150 && this.getSalud() <= 50) {
+        
+       
+        if (a>100&&a<150&&this.getSalud()<=50){
+            
             int ataque = this.getAtaque();
-            ataque += 3;
-            super.setAtaque(ataque);
-            System.out.println("Pobre iluso...Creiste que me vencerias");
-            System.out.println("TUS ATAQUES SON DEBILES!");
+            ataque+=3;
+            this.setAtaque(ataque);
+            System.out.println("Creiste que me derrotaste");
+            System.out.println("TENGO UNA FUERZA INIMAGINABLE AHORA");
+            System.out.println("");
         }
     }
 
-    public void bajarDefensa() {
+    /*public void bajarDefensa() {
         Random r = new Random();
         int a = r.nextInt(200);
 
@@ -35,6 +42,11 @@ public class Caballero extends Personaje {
             System.out.println("Desgraciados! Me habeis danado el escudo");
             System.out.println("Pagaran carooooooooooooooooooooo!");
         }
+    }*/
+
+    @Override
+    public void ganador() {
+        System.out.println("Caballero: JIJIJA GANÉ");
     }
 
 }
